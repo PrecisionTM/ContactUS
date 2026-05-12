@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Contact Us | Precision Telemed</title>
+  <meta name="description" content="Get in touch with Precision Telemed. Our board-certified physicians and US-based support team are here to help with your telehealth wellness journey." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" />
+
+  <style>
+    /* ─────────────────────────────────────────────
+       CSS CUSTOM PROPERTIES — Precision Telemed Theme
+    ───────────────────────────────────────────── */
+    :root {
+      --color-bg:          #fdfbf7;
+      --color-bg-alt:      #f5f2ec;
+      --color-card:        #ffffff;
+      --color-fg:          hsl(150, 18%, 25%);
+      --color-fg-muted:    hsl(150, 10%, 45%);
+      --color-primary:     #788C75;
+      --color-primary-rgb: 120, 140, 117;
+      --color-primary-dk:  #5a6b58;
+      --color-primary-lt:  #9aab97;
+      --color-border:      hsl(40, 20%, 88%);
+      --color-accent-gold: hsl(43, 60%, 52%);
+      --color-white:       #ffffff;
+      --color-dark:        hsl(150, 15%, 20%);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+      --section-gap:  clamp(3rem, 6vw, 5rem);
+      --container:    1100px;
+      --radius-sm:    0.5rem;
+      --radius-md:    1rem;
+      --radius-lg:    1.5rem;
+      --radius-xl:    2rem;
+      --radius-full:  9999px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.06);
+      --shadow-xl: 0 24px 64px rgba(0,0,0,.16), 0 8px 24px rgba(0,0,0,.08);
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-fg); line-height: 1.6; -webkit-overflow-scrolling: touch; }
+    #page-wrap { overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; -webkit-tap-highlight-color: transparent; }
+    button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+    input[type="range"] { touch-action: manipulation; }
+
+    .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); }
+
+
+
+    /* ── HERO / MAIN SECTION ── */
+    #contact-hero {
+      background: var(--color-bg-alt);
+      padding: clamp(3rem, 6vw, 5rem) 0 1.5rem;
+      height: auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Doctor mosaic — full width below the 2-col section */
+    .doctor-mosaic-section {
+      margin-top: clamp(2rem, 4vw, 3rem);
+      margin-bottom: -1.5rem;
+    }
+    .doctor-mosaic-section__label {
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--color-primary-dk);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .doctor-mosaic-section__label span {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    /* ── LEFT COLUMN ── */
+    .contact-left {}
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--color-primary-dk);
+      margin-bottom: 1rem;
+    }
+    .eyebrow__dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .contact-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      color: var(--color-fg);
+      margin-bottom: 1rem;
+    }
+    .contact-heading em {
+      font-style: italic;
+      color: var(--color-primary);
+    }
+
+    .contact-subhead {
+      font-size: clamp(.9375rem, 1.5vw, 1.0625rem);
+      color: var(--color-primary-dk);
+      font-weight: 600;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+      max-width: 480px;
+    }
+
+    /* Benefits list */
+    .benefits-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .85rem;
+      margin-bottom: 2.5rem;
+    }
+    .benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      font-size: .9375rem;
+      color: var(--color-fg);
+      line-height: 1.55;
+    }
+    .benefits-list li i {
+      color: var(--color-primary);
+      font-size: .85rem;
+      margin-top: .2rem;
+      flex-shrink: 0;
+    }
+    .benefits-list li strong {
+      color: var(--color-fg);
+      font-weight: 700;
+    }
+
+    /* Doctor photo grid */
+    .doctor-mosaic {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .75rem;
+    }
+    @media (max-width: 600px) {
+      .doctor-mosaic { grid-template-columns: repeat(2, 1fr); }
+    }
+    .doctor-mosaic__tile {
+      background: rgba(var(--color-primary-rgb), 0.15);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      position: relative;
+    }
+    .doctor-mosaic__tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+    .doctor-mosaic__name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(30,45,35,.82) 0%, transparent 100%);
+      padding: .9rem .75rem .55rem;
+      font-size: .72rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      letter-spacing: .01em;
+    }
+
+
+
+    /* ── RIGHT COLUMN — FORM CARD ── */
+    .contact-right {
+      position: sticky;
+      top: 2rem;
+    }
+
+    .form-card {
+      background: var(--color-card);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      padding: clamp(1.75rem, 3vw, 2.5rem);
+      border: 1px solid var(--color-border);
+    }
+    #inline-JinjwI3lWUyqUldfl7Ea {
+      width: 100% !important;
+      min-height: 587px !important;
+      height: auto !important;
+      border: none !important;
+      display: block !important;
+      overflow: hidden !important;
+    }
+
+    .form-card__title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-fg);
+      margin-bottom: .35rem;
+      line-height: 1.2;
+    }
+    .form-card__sub {
+      font-size: .875rem;
+      color: var(--color-fg-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+      margin-bottom: 1rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 0;
+    }
+    @media (max-width: 480px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    .form-label {
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-fg);
+    }
+    .form-label .req { color: var(--color-primary); }
+
+    .form-input {
+      width: 100%;
+      padding: .75rem 1rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: .9375rem;
+      color: var(--color-fg);
+      background: var(--color-bg);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .form-input::placeholder { color: hsl(150, 8%, 68%); }
+    .form-input:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), .12);
+      background: #fff;
+    }
+
+    /* phone input with icon */
+    .input-wrap { position: relative; }
+    .input-wrap .input-icon {
+      position: absolute;
+      left: .9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-fg-muted);
+      font-size: .85rem;
+      pointer-events: none;
+    }
+    .input-wrap .form-input { padding-left: 2.25rem; }
+
+    /* Consent checkboxes */
+    .consent-list {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      margin-bottom: 1.25rem;
+    }
+    .consent-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .65rem;
+    }
+    .consent-item input[type="checkbox"] {
+      margin-top: .2rem;
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      accent-color: var(--color-primary);
+      cursor: pointer;
+    }
+    .consent-item label {
+      font-size: .72rem;
+      color: var(--color-fg-muted);
+      line-height: 1.55;
+      cursor: pointer;
+    }
+
+    /* Submit button */
+    .btn-submit {
+      width: 100%;
+      padding: .9rem 1.5rem;
+      background: var(--color-primary-dk);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-full);
+      font-family: var(--font-body);
+      font-size: .9375rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .2s, transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 16px rgba(var(--color-primary-rgb), .35);
+    }
+    .btn-submit:hover {
+      background: var(--color-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(var(--color-primary-rgb), .4);
+    }
+    .btn-submit:active { transform: translateY(0); }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .form-success__icon {
+      width: 64px; height: 64px;
+      background: rgba(var(--color-primary-rgb), .12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+      color: var(--color-primary-dk);
+    }
+    .form-success__title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-fg);
+      margin-bottom: .5rem;
+    }
+    .form-success__sub {
+      font-size: .9rem;
+      color: var(--color-fg-muted);
+      line-height: 1.6;
+    }
+
+    /* Privacy / ToS links */
+    .form-links {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      margin-top: 1rem;
+      font-size: .75rem;
+      color: var(--color-fg-muted);
+    }
+    .form-links a {
+      color: var(--color-primary-dk);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .form-links a:hover { color: var(--color-primary); }
+
+    /* ── TRUST STRIP below form ── */
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .75rem 1.5rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--color-fg-muted);
+    }
+    .trust-item i { color: var(--color-primary); font-size: .8rem; }
+
+    /* ── TRUSTPILOT BADGE ── */
+    .tp-badge {
+      display: flex;
+      align-items: center;
+      gap: .375rem;
+      margin-bottom: 1.25rem;
+      width: fit-content;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .tp-badge:hover { opacity: .75; }
+    .tp-badge__excellent { font-size: .75rem; font-weight: 600; color: var(--color-fg); white-space: nowrap; }
+    .tp-badge__stars { display: inline-flex; gap: 2px; align-items: center; }
+    .tp-badge__star { display: block; width: 16px; height: 16px; flex-shrink: 0; }
+    .tp-badge__star svg { width: 16px; height: 16px; display: block; }
+    .tp-badge__divider { width: 1px; height: 12px; background: var(--color-border); flex-shrink: 0; }
+    .tp-badge__logo { display: inline-flex; align-items: center; gap: 3px; }
+    .tp-badge__wordmark { font-size: .7rem; font-weight: 600; color: var(--color-fg-muted); white-space: nowrap; }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease-out-expo), transform .7s var(--ease-out-expo); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: .1s; }
+    .delay-2 { transition-delay: .2s; }
+    .delay-3 { transition-delay: .3s; }
+    .delay-4 { transition-delay: .4s; }
+
+    /* ── CONTACT INFO CARDS ── */
+    .contact-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .contact-info-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: .6rem;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .3s, transform .3s var(--ease-out-expo);
+    }
+    .contact-info-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .contact-info-card__icon {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(var(--color-primary-rgb), .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--color-primary-dk);
+      margin-bottom: .25rem;
+    }
+    .contact-info-card__label {
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-primary-dk);
+    }
+    .contact-info-card__value {
+      font-size: .9375rem;
+      color: var(--color-fg);
+      font-weight: 500;
+      line-height: 1.55;
+    }
+    .contact-info-card__link {
+      color: var(--color-primary-dk);
+      font-weight: 600;
+      transition: color .2s;
+    }
+    .contact-info-card__link:hover { color: var(--color-primary); }
+
+    /* ── PHARMACY CARD ── */
+    .pharmacy-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-sm);
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .pharmacy-card__logo {
+      flex-shrink: 0;
+      min-width: 100px;
+    }
+    .pharmacy-card__divider {
+      width: 1px;
+      height: 60px;
+      background: var(--color-border);
+      flex-shrink: 0;
+    }
+    @media (max-width: 640px) { .pharmacy-card__divider { display: none; } }
+    .pharmacy-card__item {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      flex: 1;
+      min-width: 140px;
+    }
+    .pharmacy-card__item-icon {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(var(--color-primary-rgb), .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+      color: var(--color-primary-dk);
+      flex-shrink: 0;
+    }
+    .pharmacy-card__item-label {
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-fg-muted);
+      margin-bottom: .2rem;
+    }
+    .pharmacy-card__item-value {
+      font-size: .9375rem;
+      color: var(--color-fg);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .pharmacy-card__link {
+      color: var(--color-primary-dk);
+      font-weight: 600;
+      transition: color .2s;
+    }
+    .pharmacy-card__link:hover { color: var(--color-primary); }
+
+    @media (max-width: 720px) {
+      .contact-cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .contact-cards-grid { grid-template-columns: 1fr; }
+      .pharmacy-card { padding: 1.5rem; }
+    }
+
+    /* ── 768px and below ── */
+    @media (max-width: 768px) {
+      /* 44px touch targets */
+      .btn-submit { min-height: 44px; }
+      /* Unstick right column — sticky is confusing on mobile */
+      .contact-right { position: static; top: auto; }
+    }
+
+    /* ── 640px and below ── */
+    @media (max-width: 640px) {
+      /* Hero */
+      #contact-hero { padding: 2rem 0 1.5rem; }
+      .contact-heading { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+      .contact-subhead { font-size: .9375rem; max-width: 100%; }
+
+      /* Contact grid — already 1-col at 860px, tighten gap */
+      .contact-grid { gap: 2rem; }
+
+      /* Form */
+      .form-card { padding: 1.5rem 1.25rem; }
+      .form-input { font-size: 1rem; } /* prevents iOS auto-zoom on focus */
+
+      /* Doctor mosaic */
+      .doctor-mosaic { grid-template-columns: repeat(2, 1fr); }
+
+      /* Pharmacy cards */
+      .contact-cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── 480px and below ── */
+    @media (max-width: 480px) {
+      .container { padding-left: 1rem; padding-right: 1rem; }
+      #contact-hero { padding: 1.75rem 0 1.5rem; }
+      .contact-heading { font-size: clamp(1.625rem, 6.5vw, 2rem); }
+      .benefits-list li { font-size: .875rem; }
+      .form-card { padding: 1.25rem 1rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-cards-grid { grid-template-columns: 1fr; }
+      .pharmacy-card { padding: 1.5rem; }
+    }
+
+    /* ── 390px and below ── */
+    @media (max-width: 390px) {
+      .contact-subhead { font-size: .875rem; }
+      .contact-heading { font-size: clamp(1.5rem, 6vw, 1.875rem); }
+    }
+
+    /* ── 375px and below ── */
+    @media (max-width: 375px) {
+      .container { padding-left: .875rem; padding-right: .875rem; }
+      .doctor-mosaic { gap: .5rem; }
+    }
+
+    /* ── 320px very small ── */
+    @media (max-width: 320px) {
+      .container { padding-left: .75rem; padding-right: .75rem; }
+      .contact-heading { font-size: 1.5rem; }
+      .btn-submit { font-size: .875rem; }
+    }
+
+  </style>
+</head>
+<body>
+<div id="page-wrap">
+
+  <!-- MAIN SECTION -->
+  <section id="contact-hero">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- ── LEFT: Copy + Doctor Photos ── -->
+        <div class="contact-left">
+
+          <!-- Trustpilot badge -->
+          <a href="https://www.trustpilot.com/review/precisiontelemed.com"
+             target="_blank" rel="noopener"
+             class="tp-badge reveal"
+             aria-label="Precision Telemed — Excellent on Trustpilot">
+            <span class="tp-badge__excellent">Excellent</span>
+            <span class="tp-badge__stars" aria-label="4.7 out of 5 stars">
+              <span class="tp-badge__star"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" fill="#788C75"/><polygon points="20,6 24.5,15.5 35,17 27.5,24 29.5,34 20,29 10.5,34 12.5,24 5,17 15.5,15.5" fill="white"/></svg></span>
+              <span class="tp-badge__star"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" fill="#788C75"/><polygon points="20,6 24.5,15.5 35,17 27.5,24 29.5,34 20,29 10.5,34 12.5,24 5,17 15.5,15.5" fill="white"/></svg></span>
+              <span class="tp-badge__star"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" fill="#788C75"/><polygon points="20,6 24.5,15.5 35,17 27.5,24 29.5,34 20,29 10.5,34 12.5,24 5,17 15.5,15.5" fill="white"/></svg></span>
+              <span class="tp-badge__star"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" fill="#788C75"/><polygon points="20,6 24.5,15.5 35,17 27.5,24 29.5,34 20,29 10.5,34 12.5,24 5,17 15.5,15.5" fill="white"/></svg></span>
+              <span class="tp-badge__star"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" fill="rgba(120,140,117,0.2)"/><rect width="32" height="40" fill="#788C75"/><polygon points="20,6 24.5,15.5 35,17 27.5,24 29.5,34 20,29 10.5,34 12.5,24 5,17 15.5,15.5" fill="white"/></svg></span>
+            </span>
+            <span class="tp-badge__divider" aria-hidden="true"></span>
+            <span class="tp-badge__logo" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;display:block;"><rect width="40" height="40" fill="#788C75"/><polygon points="20,6 24.5,15.5 35,17 27.5,24 29.5,34 20,29 10.5,34 12.5,24 5,17 15.5,15.5" fill="white"/></svg>
+              <span class="tp-badge__wordmark">Trustpilot</span>
+            </span>
+          </a>
+
+          <!-- Eyebrow -->
+          <div class="eyebrow reveal"><span class="eyebrow__dot"></span> Get In Touch</div>
+
+          <!-- Headline -->
+          <h1 class="contact-heading reveal delay-1">
+            Telemedicine for people<br/><em style="font-weight:300;">who expect more</em>
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="contact-subhead reveal delay-2">
+            At Precision Telemed, we combine innovation, compassion, and medical expertise to provide seamless care when and where you need it most.
+          </p>
+
+          <!-- Benefits list -->
+          <ul class="benefits-list reveal delay-2">
+            <li>
+              <i class="fas fa-check"></i>
+              <span><strong>Expert Medical Support:</strong> Get answers directly from our experienced healthcare professionals.</span>
+            </li>
+            <li>
+              <i class="fas fa-check"></i>
+              <span><strong>Customized Solutions:</strong> Discover care plans tailored to your specific health goals and needs.</span>
+            </li>
+            <li>
+              <i class="fas fa-check"></i>
+              <span><strong>Streamlined Access:</strong> Book appointments, request refills, or check your progress — without the long wait times.</span>
+            </li>
+            <li>
+              <i class="fas fa-check"></i>
+              <span><strong>Trusted Care, Anytime:</strong> Enjoy easy access to virtual consultations and ongoing assistance from the comfort of your home.</span>
+            </li>
+            <li>
+              <i class="fas fa-check"></i>
+              <span><strong>Commitment to Results:</strong> Our team stays with you from the first consultation to your ongoing success — because your results matter to us.</span>
+            </li>
+          </ul>
+
+        </div>
+
+        <!-- ── RIGHT: Form Card ── -->
+        <div class="contact-right reveal delay-2">
+
+          <div class="form-card">
+            <h2 class="form-card__title">Contact Our Team</h2>
+            <p class="form-card__sub">Fill out the form below and a member of our US-based support team will be in touch shortly.</p>
+
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/JinjwI3lWUyqUldfl7Ea"
+              style="width:100%;border:none;display:block;"
+              id="inline-JinjwI3lWUyqUldfl7Ea"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Form 1"
+              data-height="587"
+              data-layout-iframe-id="inline-JinjwI3lWUyqUldfl7Ea"
+              data-form-id="JinjwI3lWUyqUldfl7Ea"
+              title="Form 1"
+              scrolling="no">
+            </iframe>
+            <script src="https://link.msgsndr.com/js/form-embed.js"></script>
+
+          </div>
+
+          <!-- Trust badges below form -->
+          <div class="trust-strip">
+            <span class="trust-item"><i class="fas fa-shield-halved"></i> HIPAA Compliant</span>
+            <span class="trust-item"><i class="fas fa-user-doctor"></i> Board-Certified MDs</span>
+            <span class="trust-item"><i class="fas fa-headset"></i> 100% US-Based Support</span>
+            <span class="trust-item"><i class="fas fa-lock"></i> Secure &amp; Private</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Doctor photo mosaic — full width -->
+      <div class="doctor-mosaic-section reveal">
+        <div class="doctor-mosaic-section__label"><span></span> Meet Our Providers</div>
+        <div class="doctor-mosaic">
+          <div class="doctor-mosaic__tile">
+            <img src="images/doctors/angela-kifer-thomas.jpg" alt="Angela Kifer-Thomas, APRN" />
+            <div class="doctor-mosaic__name">Angela Kifer-Thomas, APRN</div>
+          </div>
+          <div class="doctor-mosaic__tile">
+            <img src="images/doctors/dr-patel.jpg" alt="Dr. Kartik Patel, MD, MBA" />
+            <div class="doctor-mosaic__name">Dr. Kartik Patel, MD, MBA</div>
+          </div>
+          <div class="doctor-mosaic__tile">
+            <img src="images/doctors/dr-akler.jpg" alt="Dr. Akler, MD" />
+            <div class="doctor-mosaic__name">Dr. Akler, MD</div>
+          </div>
+          <div class="doctor-mosaic__tile">
+            <img src="images/doctors/brett-whaley.jpg" alt="Brett Whaley, APRN" />
+            <div class="doctor-mosaic__name">Brett Whaley, APRN</div>
+          </div>
+          <div class="doctor-mosaic__tile">
+            <img src="images/doctors/dr-ahmed.jpg" alt="Dr. Azhar Ahmed, MD" />
+            <div class="doctor-mosaic__name">Dr. Azhar Ahmed, MD</div>
+          </div>
+          <div class="doctor-mosaic__tile">
+            <img src="images/doctors/dr-chandler.jpg" alt="Dr. Chandler, MD" />
+            <div class="doctor-mosaic__name">Dr. Chandler, MD</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT INFO CARDS -->
+  <section style="background:var(--color-bg-alt); padding:clamp(2.5rem,5vw,4rem) 0;">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:2rem;" class="reveal">
+        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow__dot"></span> Reach Us Directly</div>
+        <h2 style="font-family:var(--font-heading); font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:var(--color-fg); margin-top:.6rem;">We're Here When You Need Us</h2>
+      </div>
+      <div class="contact-cards-grid">
+
+        <div class="contact-info-card reveal">
+          <div class="contact-info-card__icon"><i class="fas fa-clock"></i></div>
+          <div class="contact-info-card__label">Business Hours</div>
+          <div class="contact-info-card__value">Monday – Friday<br/>9am – 6pm (ET)</div>
+        </div>
+
+        <div class="contact-info-card reveal delay-1">
+          <div class="contact-info-card__icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-info-card__label">Phone</div>
+          <a href="tel:8777454115" class="contact-info-card__value contact-info-card__link">877-745-4115</a>
+        </div>
+
+        <div class="contact-info-card reveal delay-2">
+          <div class="contact-info-card__icon"><i class="fas fa-message"></i></div>
+          <div class="contact-info-card__label">Text</div>
+          <a href="sms:8777454115" class="contact-info-card__value contact-info-card__link">877-745-4115</a>
+        </div>
+
+        <div class="contact-info-card reveal delay-3">
+          <div class="contact-info-card__icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-info-card__label">Email</div>
+          <a href="mailto:info@precisiontelemed.com" class="contact-info-card__value contact-info-card__link" style="font-size:.85rem;">info@precisiontelemed.com</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHARMACY SECTION -->
+  <section style="background:var(--color-bg); padding:clamp(2.5rem,5vw,4rem) 0;">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:2rem;" class="reveal">
+        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow__dot"></span> Our Pharmacy Partner</div>
+        <h2 style="font-family:var(--font-heading); font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:var(--color-fg); margin-top:.6rem;">Need to Contact the Pharmacy?</h2>
+        <p style="font-size:.9375rem; color:var(--color-fg-muted); margin-top:.6rem;">All medications are compounded and dispensed by our licensed 503A partner pharmacy.</p>
+      </div>
+
+      <div class="pharmacy-card reveal delay-1">
+        <div class="pharmacy-card__logo">
+          <span style="font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--color-fg-muted); display:block; margin-bottom:.4rem;">Vios Partner</span>
+          <div style="font-family:var(--font-heading); font-size:2rem; font-weight:900; color:var(--color-primary-dk); line-height:1; letter-spacing:-.02em;">ViOS</div>
+        </div>
+        <div class="pharmacy-card__divider"></div>
+        <div class="pharmacy-card__item">
+          <div class="pharmacy-card__item-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <div class="pharmacy-card__item-label">Address</div>
+            <div class="pharmacy-card__item-value">31035 Schoolcraft Rd<br/>Livonia, Michigan 48150</div>
+          </div>
+        </div>
+        <div class="pharmacy-card__item">
+          <div class="pharmacy-card__item-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="pharmacy-card__item-label">Phone</div>
+            <a href="tel:8005189831" class="pharmacy-card__item-value pharmacy-card__link">800-518-9831</a>
+          </div>
+        </div>
+        <div class="pharmacy-card__item">
+          <div class="pharmacy-card__item-icon"><i class="fas fa-fax"></i></div>
+          <div>
+            <div class="pharmacy-card__item-label">Fax</div>
+            <div class="pharmacy-card__item-value">800.537.5193</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+</div>
+
+<script>
+  // ── Reveal on scroll ──
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
